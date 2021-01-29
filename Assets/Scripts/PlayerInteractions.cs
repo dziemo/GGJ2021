@@ -7,7 +7,8 @@ public class PlayerInteractions : MonoBehaviour
 {
     public LayerMask lostObjectsLayer;
     public GameEvent onLostObjectFound;
-    public float maxRayDist = 15f;
+    public float maxRayDist = 12f;
+    public float rayRadius = 0.5f;
 
     Camera cam;
     LostObjectController lastHighligted;
@@ -39,7 +40,7 @@ public class PlayerInteractions : MonoBehaviour
 
         Debug.DrawRay(ray.origin, ray.direction * maxRayDist);
 
-        if (Physics.Raycast(ray, out rayHit, maxRayDist, lostObjectsLayer))
+        if (Physics.SphereCast(ray, rayRadius, out rayHit, maxRayDist, lostObjectsLayer))
         {
             var collController = rayHit.collider.GetComponent<LostObjectController>();
 

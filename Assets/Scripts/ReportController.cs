@@ -23,7 +23,10 @@ public class ReportController : MonoBehaviour
         gameNames = new List<string>(names);
         gameLostObjects = new List<GameObject>(lostObjects);
         gameAreas = new List<AreaController>(areas);
+    }
 
+    public void OnGameStart ()
+    {
         GenerateNewReport();
     }
 
