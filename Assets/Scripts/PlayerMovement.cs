@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Transform cam;
+    public Animator anim;
+
     public float speed = 5f;
     public float turnSmoothTime = 0.1f;
     public float gravity = -9.81f;
@@ -14,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     CharacterController controller;
     Vector3 moveDir = Vector3.zero;
     Vector3 velocity = Vector3.zero;
-
+    
     float turnSmoothVelocity;
 
     private void Start()
@@ -41,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         if (controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            anim.SetBool("Jump", true);
         }
     }
 
@@ -48,7 +51,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (controller.isGrounded && velocity.y < 0)
         {
+            anim.SetBool("Jump", false);
             velocity.y = -2f;
+        }
+        else if (!anim.GetBool("Jump"))
+        {
+            anim.SetBool("Jump", true);
         }
 
         Vector3 processedDir = Vector3.zero;
@@ -61,10 +69,16 @@ public class PlayerMovement : MonoBehaviour
 
             processedDir = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
             processedDir *= speed;
+
+            anim.SetBool("Run", true);
+        }
+        else
+        {
+            anim.SetBool("Run", false);
         }
 
         velocity.y += gravity * Time.deltaTime;
-
+        
         controller.Move((velocity + processedDir) * Time.deltaTime);    
     }
 }
