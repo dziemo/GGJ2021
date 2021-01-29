@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2021-01-29T19:37:17Z</created>
+    <modified>2021-01-29T19:37:17Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="lada-diffuse-tex" name="lada-diffuse-tex">
+      <init_from>lada_diffuse.png</init_from>
+    </image>
+    <image id="lada-emissive-tex" name="lada-emissive-tex">
+      <init_from>lada_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="lada-Effect">
+      <profile_COMMON>
+        <newparam sid="lada-diffuse-surface">
+          <surface type="2D">
+            <init_from>lada-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="lada-emissive-surface">
+          <surface type="2D">
+            <init_from>lada-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="lada-diffuse-sampler">
+          <sampler2D>
+            <source>lada-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="lada-emissive-sampler">
+          <sampler2D>
+            <source>lada-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="lada-tex-bind" texture="lada-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="lada-tex-bind" texture="lada-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="lada-Material">
+      <instance_effect url="#lada-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="lada-Geom" name="lada-Geom">
+      <mesh>
+        <source id="lada-Pos">
+          <float_array count="168" id="lada-Pos-array">-8.0 -8.0 4.0 -8.0 0.0 4.0 -8.0 0.0 -3.0 -8.0 -8.0 -3.0 -8.0 0.0 5.0 -8.0 1.0 5.0 -8.0 1.0 3.0 -8.0 0.0 3.0 -8.0 -1.0 5.0 -8.0 0.0 5.0 -8.0 0.0 4.0 -8.0 -1.0 4.0 8.0 -8.0 -3.0 8.0 0.0 -3.0 8.0 0.0 4.0 8.0 -8.0 4.0 8.0 0.0 3.0 8.0 1.0 3.0 8.0 1.0 5.0 8.0 0.0 5.0 8.0 -1.0 4.0 8.0 0.0 4.0 8.0 0.0 5.0 8.0 -1.0 5.0 -8.0 -8.0 -3.0 8.0 -8.0 -3.0 8.0 -8.0 4.0 -8.0 -8.0 4.0 -8.0 -1.0 4.0 8.0 -1.0 4.0 8.0 -1.0 5.0 -8.0 -1.0 5.0 -8.0 0.0 3.0 8.0 0.0 3.0 8.0 0.0 -3.0 -8.0 0.0 -3.0 -8.0 1.0 5.0 8.0 1.0 5.0 8.0 1.0 3.0 -8.0 1.0 3.0 -8.0 0.0 -3.0 8.0 0.0 -3.0 8.0 -8.0 -3.0 -8.0 -8.0 -3.0 -8.0 1.0 3.0 8.0 1.0 3.0 8.0 0.0 3.0 -8.0 0.0 3.0 -8.0 -8.0 4.0 8.0 -8.0 4.0 8.0 -1.0 4.0 -8.0 -1.0 4.0 -8.0 -1.0 5.0 8.0 -1.0 5.0 8.0 1.0 5.0 -8.0 1.0 5.0 </float_array>
+          <technique_common>
+            <accessor count="56" source="#lada-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="lada-UV">
+          <float_array count="112" id="lada-UV-array">0.109375 0.875 0.109375 1.0 0.0 1.0 0.0 0.875 0.0 0.96875 0.015625 0.96875 0.015625 1.0 0.0 1.0 0.0 0.984375 0.015625 0.984375 0.015625 1.0 0.0 1.0 0.0 0.875 0.0 1.0 0.109375 1.0 0.109375 0.875 0.0 1.0 0.015625 1.0 0.015625 0.96875 0.0 0.96875 0.0 1.0 0.015625 1.0 0.015625 0.984375 0.0 0.984375 0.140625 0.75 0.140625 1.0 0.25 1.0 0.25 0.75 0.28125 0.75 0.28125 1.0 0.296875 1.0 0.296875 0.75 0.421875 0.75 0.421875 1.0 0.328125 1.0 0.328125 0.75 0.484375 0.75 0.484375 1.0 0.453125 1.0 0.453125 0.75 0.125 0.46875 0.125 0.71875 0.0 0.71875 0.0 0.46875 0.15625 0.75 0.15625 1.0 0.140625 1.0 0.140625 0.75 0.28125 0.46875 0.28125 0.71875 0.390625 0.71875 0.390625 0.46875 0.15625 0.46875 0.15625 0.71875 0.1875 0.71875 0.1875 0.46875 </float_array>
+          <technique_common>
+            <accessor count="56" source="#lada-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="lada-Normal">
+          <float_array count="18" id="lada-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#lada-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="lada-Vertices">
+          <input semantic="POSITION" source="#lada-Pos"/>
+        </vertices>
+        <polylist count="14" material="lada-Material">
+          <input offset="0" semantic="VERTEX" source="#lada-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#lada-UV"/>
+          <input offset="2" semantic="NORMAL" source="#lada-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 1 13 13 1 14 14 1 15 15 1 16 16 1 17 17 1 18 18 1 19 19 1 20 20 1 21 21 1 22 22 1 23 23 1 24 24 2 25 25 2 26 26 2 27 27 2 28 28 2 29 29 2 30 30 2 31 31 2 32 32 3 33 33 3 34 34 3 35 35 3 36 36 3 37 37 3 38 38 3 39 39 3 40 40 4 41 41 4 42 42 4 43 43 4 44 44 4 45 45 4 46 46 4 47 47 4 48 48 5 49 49 5 50 50 5 51 51 5 52 52 5 53 53 5 54 54 5 55 55 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations/>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="lada" name="lada">
+        <translate>0 0 0</translate>
+        <rotate>0 0 1 0</rotate>
+        <rotate>0 1 0 0</rotate>
+        <rotate>1 0 0 0</rotate>
+        <scale>1 1 1</scale>
+        <instance_geometry url="#lada-Geom">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lada-Material" target="#lada-Material">
+                <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="lada-tex-bind"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
