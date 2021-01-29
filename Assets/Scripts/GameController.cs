@@ -7,11 +7,13 @@ using TMPro;
 public class GameController : MonoBehaviour
 {
     public TextMeshProUGUI timeText;
+    public TextMeshProUGUI scoreText;
 
     public GameEvent gameStart;
     public GameEvent gameEnd;
 
     public int totalTimeSecs = 60;
+    public int score = 0;
 
     float currentTime;
 
@@ -19,7 +21,8 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        timeText.enabled = false;   
+        timeText.enabled = false;
+        scoreText.text = score.ToString();
         StartCoroutine(GameStartDelay());
     }
 
@@ -38,6 +41,12 @@ public class GameController : MonoBehaviour
                 timeText.text = currentTime.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
             }
         }
+    }
+
+    public void OnLostObjectFound ()
+    {
+        score++;
+        scoreText.text = score.ToString();
     }
 
     private void OnGameEnd ()
