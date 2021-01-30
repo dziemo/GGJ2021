@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
+    public float fallTreshold = -15f;
 
     CharacterController controller;
     Vector3 moveDir = Vector3.zero;
@@ -57,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("Jump", false);
             velocity.y = -2f;
         }
-        else if (!anim.GetBool("Jump"))
+        else if (!anim.GetBool("Jump") && velocity.y < fallTreshold)
         {
             anim.SetBool("Jump", true);
         }

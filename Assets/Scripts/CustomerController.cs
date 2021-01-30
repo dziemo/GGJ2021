@@ -6,9 +6,13 @@ using DG.Tweening;
 
 public class CustomerController : MonoBehaviour
 {
+    public Animator anim;
+    public CapsuleCollider mainColl;
+    public Vector2 speedLimits = new Vector2(4f, 12f);
+
     public float maxDistance = 20f;
     public float pushForce = 1f;
-    public Vector2 speedLimits = new Vector2(4f, 12f);
+    public float runTreshold = 6f;
 
     NavMeshAgent agent;
 
@@ -19,6 +23,7 @@ public class CustomerController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = Random.Range(speedLimits.x, speedLimits.y);
         PickNewPoint();
+        SetMoveAnim();
     }
 
     private void Update()
@@ -42,26 +47,30 @@ public class CustomerController : MonoBehaviour
 
     IEnumerator OnPointReached ()
     {
+        anim.SetBool("Walk", false);
+        anim.SetBool("Run", false);
         PickNewPoint();
         agent.isStopped = true;
         agent.speed = Random.Range(speedLimits.x, speedLimits.y);
         yield return new WaitForSeconds(Random.Range(3f, 10f));
         agent.isStopped = false;
+        SetMoveAnim();
     }
 
     public void OnPlayerCollision (Vector3 playerPos)
     {
         if (!isDisabled)
         {
+            anim.SetBool("Walk", false);
+            anim.SetBool("Run", false);
+
             agent.isStopped = true;
             StartCoroutine(CollisionWalkDelay());
             isDisabled = true;
 
             var customerPos = transform.position + (Vector3.up * (agent.height / 2));
             var pushDir = (transform.position - playerPos).normalized;
-
-            pushDir.y = 0;
-
+            
             transform.forward = -pushDir;
 
             RaycastHit castHit;
@@ -69,7 +78,9 @@ public class CustomerController : MonoBehaviour
 
             if (Physics.CapsuleCast(transform.position, transform.position + (transform.up * agent.height), agent.radius, pushDir, out castHit, pushForce))
             {
-                transform.DOMove(castHit.point, 0.5f);
+                var movePos = castHit.point + ((transform.position - castHit.point).normalized * mainColl.radius);
+                Debug.DrawLine(transform.position, movePos, Color.red, 2f);
+                transform.DOMove(movePos, 0.5f);
             }
             else
             {
@@ -83,5 +94,18 @@ public class CustomerController : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(1.5f, 3f));
         agent.isStopped = false;
         isDisabled = false;
+        SetMoveAnim();
+    }
+
+    private void SetMoveAnim ()
+    {
+        if (agent.speed < runTreshold)
+        {
+            anim.SetBool("Walk", true);
+        }
+        else
+        {
+            anim.SetBool("Run", true);
+        }
     }
 }
