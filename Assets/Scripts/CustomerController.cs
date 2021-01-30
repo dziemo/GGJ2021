@@ -14,12 +14,24 @@ public class CustomerController : MonoBehaviour
     public float pushForce = 1f;
     public float runTreshold = 6f;
 
+    public Transform modelsParent;
+
     NavMeshAgent agent;
+
+    List<GameObject> models = new List<GameObject>();
 
     bool isDisabled = false;
 
     private void Start()
     {
+        foreach (Transform t in modelsParent)
+        {
+            models.Add(t.gameObject);
+            t.gameObject.SetActive(false);
+        }
+
+        models[Random.Range(0, models.Count)].SetActive(true);
+
         agent = GetComponent<NavMeshAgent>();
         agent.speed = Random.Range(speedLimits.x, speedLimits.y);
         PickNewPoint();
@@ -70,16 +82,17 @@ public class CustomerController : MonoBehaviour
 
             var customerPos = transform.position + (Vector3.up * (agent.height / 2));
             var pushDir = (transform.position - playerPos).normalized;
-            
+
+            pushDir.y = 0;
+
             transform.forward = -pushDir;
 
             RaycastHit castHit;
 
 
-            if (Physics.CapsuleCast(transform.position, transform.position + (transform.up * agent.height), agent.radius, pushDir, out castHit, pushForce))
+            if (Physics.CapsuleCast(transform.position, transform.position + (transform.up * agent.height), agent.radius / 2, pushDir, out castHit, pushForce))
             {
                 var movePos = castHit.point + ((transform.position - castHit.point).normalized * mainColl.radius);
-                Debug.DrawLine(transform.position, movePos, Color.red, 2f);
                 transform.DOMove(movePos, 0.5f);
             }
             else
