@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/drzewkosmall.prefab.meta
 guid: 9bc02add35936f84eb3abd9aba7083e0
 PrefabImporter:
+=======
+guid: 954b535ad54077144b306b1d45772397
+folderAsset: yes
+DefaultImporter:
+>>>>>>> 28d0d5b2f7c21810bfe6d893bdc9b3af25097976:Assets/Graphics/Models/Milk.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

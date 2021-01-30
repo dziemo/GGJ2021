@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/roslinkasmall.prefab.meta
 guid: 9d3bd472ae22843489993eacc8cc62f9
 PrefabImporter:
+=======
+guid: acd79d2ae80af06468eacf47dd2a326a
+folderAsset: yes
+DefaultImporter:
+>>>>>>> 28d0d5b2f7c21810bfe6d893bdc9b3af25097976:Assets/Prefabs/PrefabsVariants.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

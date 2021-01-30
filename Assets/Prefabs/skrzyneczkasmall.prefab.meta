@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/skrzyneczkasmall.prefab.meta
 guid: 3cbe92350da3dfa42a29d08524c8f05b
 PrefabImporter:
+=======
+guid: e9f05c38127f1844eabc6b451888dc07
+DefaultImporter:
+>>>>>>> 28d0d5b2f7c21810bfe6d893bdc9b3af25097976:Assets/Scenes/PrefabTestMax.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
