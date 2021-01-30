@@ -77,6 +77,7 @@ public class CustomerController : MonoBehaviour
         {
             anim.SetBool("Walk", false);
             anim.SetBool("Run", false);
+            anim.SetTrigger("Collided");
 
             agent.isStopped = true;
             StartCoroutine(CollisionWalkDelay());
