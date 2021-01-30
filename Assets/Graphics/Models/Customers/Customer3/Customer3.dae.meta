@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f3e91058a5bb1a44bc913e895206992
+guid: 73331a13239242d4793ec0725d9e3abd
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -11,42 +11,42 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Body-Material
-    second: {fileID: 2100000, guid: 521b2163badb6d440b8dea9e47c49467, type: 2}
+    second: {fileID: 2100000, guid: c8fa193307641b3498d72854ee563267, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hair-Material
-    second: {fileID: 2100000, guid: 74b7f809db03f3f43b45b497677196b4, type: 2}
+    second: {fileID: 2100000, guid: c9fb39faee804b84d9db85aea4016ae4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: HandLeft-Material
-    second: {fileID: 2100000, guid: 40df6b8be0c8000418721583672323cb, type: 2}
+    second: {fileID: 2100000, guid: ee7a6006e90bc864ab0fb78c05176977, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: HandRight-Material
-    second: {fileID: 2100000, guid: faf6cc690e02a974cbd55584736cc3ea, type: 2}
+    second: {fileID: 2100000, guid: c355e77edcf74714e87e499caa5d3335, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Head-Material
-    second: {fileID: 2100000, guid: 6c4833c2cb5d67245bf21a1ae7cd8d02, type: 2}
+    second: {fileID: 2100000, guid: 7fd5f44fbe0be414c9fa1b4659084fe4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Legs-Material
-    second: {fileID: 2100000, guid: 81ec36da7a7190d468dc8ae7e300c505, type: 2}
+    second: {fileID: 2100000, guid: 07f2adb6657f2ac4c8c72de45004b6b5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mouth-Material
-    second: {fileID: 2100000, guid: 50b0a19adda3bc64dbf0e13b7bbe79bb, type: 2}
+    second: {fileID: 2100000, guid: cfc9638c0886b0c448ac4d5764173a48, type: 2}
   materials:
     materialImportMode: 1
-    materialName: 3
+    materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -69,7 +69,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -77,11 +77,11 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
-    fileIdsGeneration: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -92,18 +92,18 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
-    normalCalculationMode: 0
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
@@ -126,7 +126,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
   additionalBone: 0
