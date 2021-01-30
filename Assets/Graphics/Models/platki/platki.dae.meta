@@ -3,7 +3,12 @@ guid: 8fb3f40c9f0595848a38a7c97df7a23c
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: platki-Material
+    second: {fileID: 2100000, guid: d22ffb547531e224993390e27e69c984, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
