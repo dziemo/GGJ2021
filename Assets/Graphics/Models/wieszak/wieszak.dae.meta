@@ -3,7 +3,12 @@ guid: f6fd4d2114792cc43aa82056d73d8ec7
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wieszak-Material
+    second: {fileID: 2100000, guid: 179803dfa4b20a549809c305791c7ec8, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
