@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: LostObjects
   m_EditorClassIdentifier: 
   _list:
-  - {fileID: 3939360046176398653, guid: 54eadf9efef9d414abe0942afe1a6eff, type: 3}
-  - {fileID: 3939360046176398653, guid: fd205d56a4dbfcb4ca9feda5505ba3a8, type: 3}
+  - {fileID: 3939360046176398653, guid: cea457158cd6164408a7311d811c0b78, type: 3}
+  - {fileID: 3939360046176398653, guid: 433a4845f9d931249845d03b0355aab2, type: 3}
+  - {fileID: 3939360046176398653, guid: d0765f7797b84fd40bfed8ae8bf07ad8, type: 3}
+  - {fileID: 3939360046176398653, guid: 0b78e53ba1faf0b4e9d2d2e8ec18006c, type: 3}

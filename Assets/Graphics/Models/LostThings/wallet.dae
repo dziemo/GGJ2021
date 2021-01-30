@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2021-01-30T21:06:48Z</created>
+    <modified>2021-01-30T21:06:48Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="Portfel-diffuse-tex" name="Portfel-diffuse-tex">
+      <init_from>Portfel_diffuse.png</init_from>
+    </image>
+    <image id="Portfel-emissive-tex" name="Portfel-emissive-tex">
+      <init_from>Portfel_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="Portfel-Effect">
+      <profile_COMMON>
+        <newparam sid="Portfel-diffuse-surface">
+          <surface type="2D">
+            <init_from>Portfel-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Portfel-emissive-surface">
+          <surface type="2D">
+            <init_from>Portfel-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Portfel-diffuse-sampler">
+          <sampler2D>
+            <source>Portfel-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Portfel-emissive-sampler">
+          <sampler2D>
+            <source>Portfel-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="Portfel-tex-bind" texture="Portfel-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="Portfel-tex-bind" texture="Portfel-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Portfel-Material">
+      <instance_effect url="#Portfel-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Portfel-Geom" name="Portfel-Geom">
+      <mesh>
+        <source id="Portfel-Pos">
+          <float_array count="360" id="Portfel-Pos-array">-4.5 -4.5 2.5000002 -4.5 -3.5 2.5000002 -4.5 -3.5 -2.5 -4.5 -4.5 -2.5 -3.5 -5.5 2.5000002 -3.5 -4.5 2.5000002 -3.5 -4.5 -2.5 -3.5 -5.5 -2.5 -3.5 -3.5 2.5000002 -3.5 -2.5 2.5000002 -3.5 -2.5 -2.5 -3.5 -3.5 -2.5 -3.5 -4.5 -2.5 -3.5 -3.5 -2.5 -3.5 -3.5 -3.5 -3.5 -4.5 -3.5 -3.5 -4.5 3.5000005 -3.5 -3.5 3.5000005 -3.5 -3.5 2.5000002 -3.5 -4.5 2.5000002 3.5000005 -5.5 -2.5 3.5000005 -4.5 -2.5 3.5000005 -4.5 2.5000002 3.5000005 -5.5 2.5000002 3.5000005 -3.5 -2.5 3.5000005 -2.5 -2.5 3.5000005 -2.5 2.5000002 3.5000005 -3.5 2.5000002 3.5000005 -4.5 -3.5 3.5000005 -3.5 -3.5 3.5000005 -3.5 -2.5 3.5000005 -4.5 -2.5 3.5000005 -4.5 2.5000002 3.5000005 -3.5 2.5000002 3.5000005 -3.5 3.5000005 3.5000005 -4.5 3.5000005 4.5000005 -4.5 -2.5 4.5000005 -3.5 -2.5 4.5000005 -3.5 2.5000002 4.5000005 -4.5 2.5000002 -3.5 -5.5 -2.5 3.5000005 -5.5 -2.5 3.5000005 -5.5 2.5000002 -3.5 -5.5 2.5000002 -3.5 -4.5 -3.5 3.5000005 -4.5 -3.5 3.5000005 -4.5 -2.5 -3.5 -4.5 -2.5 -3.5 -4.5 2.5000002 3.5000005 -4.5 2.5000002 3.5000005 -4.5 3.5000005 -3.5 -4.5 3.5000005 -4.5 -4.5 -2.5 -3.5 -4.5 -2.5 -3.5 -4.5 2.5000002 -4.5 -4.5 2.5000002 3.5000005 -4.5 -2.5 4.5000005 -4.5 -2.5 4.5000005 -4.5 2.5000002 3.5000005 -4.5 2.5000002 -3.5 -3.5 -2.5 3.5000005 -3.5 -2.5 3.5000005 -3.5 -3.5 -3.5 -3.5 -3.5 -3.5 -3.5 3.5000005 3.5000005 -3.5 3.5000005 3.5000005 -3.5 2.5000002 -3.5 -3.5 2.5000002 -4.5 -3.5 2.5000002 -3.5 -3.5 2.5000002 -3.5 -3.5 -2.5 -4.5 -3.5 -2.5 3.5000005 -3.5 2.5000002 4.5000005 -3.5 2.5000002 4.5000005 -3.5 -2.5 3.5000005 -3.5 -2.5 -3.5 -2.5 2.5000002 3.5000005 -2.5 2.5000002 3.5000005 -2.5 -2.5 -3.5 -2.5 -2.5 -3.5 -3.5 -3.5 3.5000005 -3.5 -3.5 3.5000005 -4.5 -3.5 -3.5 -4.5 -3.5 -3.5 -4.5 -2.5 3.5000005 -4.5 -2.5 3.5000005 -5.5 -2.5 -3.5 -5.5 -2.5 -3.5 -2.5 -2.5 3.5000005 -2.5 -2.5 3.5000005 -3.5 -2.5 -3.5 -3.5 -2.5 -4.5 -3.5 -2.5 -3.5 -3.5 -2.5 -3.5 -4.5 -2.5 -4.5 -4.5 -2.5 3.5000005 -3.5 -2.5 4.5000005 -3.5 -2.5 4.5000005 -4.5 -2.5 3.5000005 -4.5 -2.5 -3.5 -5.5 2.5000002 3.5000005 -5.5 2.5000002 3.5000005 -4.5 2.5000002 -3.5 -4.5 2.5000002 -3.5 -3.5 2.5000002 3.5000005 -3.5 2.5000002 3.5000005 -2.5 2.5000002 -3.5 -2.5 2.5000002 -4.5 -4.5 2.5000002 -3.5 -4.5 2.5000002 -3.5 -3.5 2.5000002 -4.5 -3.5 2.5000002 3.5000005 -4.5 2.5000002 4.5000005 -4.5 2.5000002 4.5000005 -3.5 2.5000002 3.5000005 -3.5 2.5000002 -3.5 -4.5 3.5000005 3.5000005 -4.5 3.5000005 3.5000005 -3.5 3.5000005 -3.5 -3.5 3.5000005 </float_array>
+          <technique_common>
+            <accessor count="120" source="#Portfel-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Portfel-UV">
+          <float_array count="240" id="Portfel-UV-array">0.0 0.6875 0.03125 0.6875 0.03125 1.0 0.0 1.0 0.0 0.6875 0.03125 0.6875 0.03125 1.0 0.0 1.0 0.0 0.6875 0.03125 0.6875 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 1.0 0.03125 1.0 0.03125 0.6875 0.0 0.6875 0.0 1.0 0.03125 1.0 0.03125 0.6875 0.0 0.6875 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.6875 0.0 0.6875 0.09375 0.5625 0.09375 1.0 0.25 1.0 0.25 0.5625 0.3125 0.5625 0.3125 1.0 0.34375 1.0 0.34375 0.5625 0.40625 0.5625 0.40625 1.0 0.4375 1.0 0.4375 0.5625 0.0 1.0 0.03125 1.0 0.03125 0.6875 0.0 0.6875 0.0 1.0 0.03125 1.0 0.03125 0.6875 0.0 0.6875 0.34375 0.5625 0.34375 1.0 0.3125 1.0 0.3125 0.5625 0.125 0.5625 0.125 1.0 0.09375 1.0 0.09375 0.5625 0.0 0.6875 0.03125 0.6875 0.03125 1.0 0.0 1.0 0.0 0.6875 0.03125 0.6875 0.03125 1.0 0.0 1.0 0.65625 0.5625 0.65625 1.0 0.5 1.0 0.5 0.5625 0.34375 0.5625 0.34375 1.0 0.3125 1.0 0.3125 0.5625 0.125 0.5625 0.125 1.0 0.09375 1.0 0.09375 0.5625 0.34375 0.5625 0.34375 1.0 0.3125 1.0 0.3125 0.5625 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.09375 0.5625 0.09375 1.0 0.125 1.0 0.125 0.5625 0.09375 0.5625 0.09375 1.0 0.125 1.0 0.125 0.5625 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.09375 0.5625 0.09375 1.0 0.125 1.0 0.125 0.5625 </float_array>
+          <technique_common>
+            <accessor count="120" source="#Portfel-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Portfel-Normal">
+          <float_array count="18" id="Portfel-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#Portfel-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Portfel-Vertices">
+          <input semantic="POSITION" source="#Portfel-Pos"/>
+        </vertices>
+        <polylist count="30" material="Portfel-Material">
+          <input offset="0" semantic="VERTEX" source="#Portfel-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#Portfel-UV"/>
+          <input offset="2" semantic="NORMAL" source="#Portfel-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 0 13 13 0 14 14 0 15 15 0 16 16 0 17 17 0 18 18 0 19 19 0 20 20 1 21 21 1 22 22 1 23 23 1 24 24 1 25 25 1 26 26 1 27 27 1 28 28 1 29 29 1 30 30 1 31 31 1 32 32 1 33 33 1 34 34 1 35 35 1 36 36 1 37 37 1 38 38 1 39 39 1 40 40 2 41 41 2 42 42 2 43 43 2 44 44 2 45 45 2 46 46 2 47 47 2 48 48 2 49 49 2 50 50 2 51 51 2 52 52 2 53 53 2 54 54 2 55 55 2 56 56 2 57 57 2 58 58 2 59 59 2 60 60 3 61 61 3 62 62 3 63 63 3 64 64 3 65 65 3 66 66 3 67 67 3 68 68 3 69 69 3 70 70 3 71 71 3 72 72 3 73 73 3 74 74 3 75 75 3 76 76 3 77 77 3 78 78 3 79 79 3 80 80 4 81 81 4 82 82 4 83 83 4 84 84 4 85 85 4 86 86 4 87 87 4 88 88 4 89 89 4 90 90 4 91 91 4 92 92 4 93 93 4 94 94 4 95 95 4 96 96 4 97 97 4 98 98 4 99 99 4 100 100 5 101 101 5 102 102 5 103 103 5 104 104 5 105 105 5 106 106 5 107 107 5 108 108 5 109 109 5 110 110 5 111 111 5 112 112 5 113 113 5 114 114 5 115 115 5 116 116 5 117 117 5 118 118 5 119 119 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations/>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="Portfel" name="Portfel">
+        <translate>0 0 0</translate>
+        <rotate>0 0 1 0</rotate>
+        <rotate>0 1 0 0</rotate>
+        <rotate>1 0 0 0</rotate>
+        <scale>1 1 1</scale>
+        <instance_geometry url="#Portfel-Geom">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Portfel-Material" target="#Portfel-Material">
+                <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="Portfel-tex-bind"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
