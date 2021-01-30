@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2021-01-30T18:04:58Z</created>
+    <modified>2021-01-30T18:04:58Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="TV-diffuse-tex" name="TV-diffuse-tex">
+      <init_from>TV_diffuse.png</init_from>
+    </image>
+    <image id="TV-emissive-tex" name="TV-emissive-tex">
+      <init_from>TV_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="TV-Effect">
+      <profile_COMMON>
+        <newparam sid="TV-diffuse-surface">
+          <surface type="2D">
+            <init_from>TV-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="TV-emissive-surface">
+          <surface type="2D">
+            <init_from>TV-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="TV-diffuse-sampler">
+          <sampler2D>
+            <source>TV-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="TV-emissive-sampler">
+          <sampler2D>
+            <source>TV-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="TV-tex-bind" texture="TV-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="TV-tex-bind" texture="TV-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="TV-Material">
+      <instance_effect url="#TV-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="TV-Geom" name="TV-Geom">
+      <mesh>
+        <source id="TV-Pos">
+          <float_array count="72" id="TV-Pos-array">-16.0 -6.0 -15.0 -16.0 8.0 -15.0 -16.0 8.0 -16.0 -16.0 -6.0 -16.0 16.0 -6.0 -16.0 16.0 8.0 -16.0 16.0 8.0 -15.0 16.0 -6.0 -15.0 -16.0 -6.0 -16.0 16.0 -6.0 -16.0 16.0 -6.0 -15.0 -16.0 -6.0 -15.0 -16.0 8.0 -15.0 16.0 8.0 -15.0 16.0 8.0 -16.0 -16.0 8.0 -16.0 -16.0 8.0 -16.0 16.0 8.0 -16.0 16.0 -6.0 -16.0 -16.0 -6.0 -16.0 -16.0 -6.0 -15.0 16.0 -6.0 -15.0 16.0 8.0 -15.0 -16.0 8.0 -15.0 </float_array>
+          <technique_common>
+            <accessor count="24" source="#TV-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="TV-UV">
+          <float_array count="48" id="TV-UV-array">0.0078125 0.78125 0.0078125 1.0 0.0 1.0 0.0 0.78125 0.0 0.78125 0.0 1.0 0.0078125 1.0 0.0078125 0.78125 0.0234375 0.5 0.0234375 1.0 0.03125 1.0 0.03125 0.5 0.0546875 0.5 0.0546875 1.0 0.046875 1.0 0.046875 0.5 0.1796875 0.5 0.1796875 1.0 0.0703125 1.0 0.0703125 0.5 0.265625 0.5 0.265625 1.0 0.375 1.0 0.375 0.5 </float_array>
+          <technique_common>
+            <accessor count="24" source="#TV-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="TV-Normal">
+          <float_array count="18" id="TV-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#TV-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="TV-Vertices">
+          <input semantic="POSITION" source="#TV-Pos"/>
+        </vertices>
+        <polylist count="6" material="TV-Material">
+          <input offset="0" semantic="VERTEX" source="#TV-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#TV-UV"/>
+          <input offset="2" semantic="NORMAL" source="#TV-Normal"/>
+          <vcount>4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 1 5 5 1 6 6 1 7 7 1 8 8 2 9 9 2 10 10 2 11 11 2 12 12 3 13 13 3 14 14 3 15 15 3 16 16 4 17 17 4 18 18 4 19 19 4 20 20 5 21 21 5 22 22 5 23 23 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations/>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="TV" name="TV">
+        <translate>0 0 0</translate>
+        <rotate>0 0 1 0</rotate>
+        <rotate>0 1 0 0</rotate>
+        <rotate>1 0 0 0</rotate>
+        <scale>1 1 1</scale>
+        <instance_geometry url="#TV-Geom">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="TV-Material" target="#TV-Material">
+                <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="TV-tex-bind"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
