@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ReportController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class ReportController : MonoBehaviour
     public GameObjectCollection lostObjects;
     public List<AreaController> areas = new List<AreaController>();
     public GameEvent onNewReport;
+    public TextMeshProUGUI possibleLocationsText;
+    public TextMeshProUGUI reportText;
 
     List<string> gameNames;
     List<GameObject> gameLostObjects;
@@ -43,9 +46,24 @@ public class ReportController : MonoBehaviour
 
         var spawnPoint = newArea.PickRandomSpawn();
 
+
         gameNames.Remove(currentName);
         gameLostObjects.Remove(currentObject);
         gameAreas.Remove(currentArea);
+
+        var fakeArea = gameAreas[Random.Range(0, gameAreas.Count)];
+        var rnd = Random.Range(0f, 2f);
+
+        if (rnd < 1f)
+        {
+            reportText.text = $"{newName} LOST {newObject.GetComponent<LostObjectController>().objectName}.\nIT MIGHT BE IN {fakeArea.areaName} OR {newArea.areaName}.\nGO FIND IT!";
+            possibleLocationsText.text = $"{fakeArea.areaName}\n{newArea.areaName}";
+        }
+        else
+        {
+            reportText.text = $"{newName} LOST {newObject.GetComponent<LostObjectController>().objectName}.\nIT MIGHT BE IN {newArea.areaName} OR {fakeArea.areaName}.\nGO FIND IT!";
+            possibleLocationsText.text = $"{newArea.areaName}\n{fakeArea.areaName}";
+        }
 
         Instantiate(newObject, spawnPoint.position, Quaternion.identity);
 

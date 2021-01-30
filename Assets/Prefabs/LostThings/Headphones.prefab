@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9835eddf2f211f84a9edb149804fc861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectName: Headphones
 --- !u!114 &3939360046176398642
 MonoBehaviour:
   m_ObjectHideFlags: 0
