@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Graphics/Models/barierka.meta
 guid: ee65b27134836674387d27aa14394c67
+=======
+guid: a5146aeb10405894cb29879a5d88c70a
+>>>>>>> ec1526102670b35d48ae988469d373c1ce356033:Assets/Graphics/Models/Bed.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

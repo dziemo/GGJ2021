@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Graphics/Models/chipsy.meta
 guid: a9781393d12f38a45a0aaf88b4cf4429
+=======
+guid: c9af2dcea8f21084281bf49ba14e68d1
+>>>>>>> ec1526102670b35d48ae988469d373c1ce356033:Assets/Graphics/Models/Lamp.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
