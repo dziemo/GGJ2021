@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class ReportController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class ReportController : MonoBehaviour
     public GameEvent onNewReport;
     public TextMeshProUGUI possibleLocationsText;
     public TextMeshProUGUI reportText;
+
+    public GameObject radio;
 
     List<string> gameNames;
     List<GameObject> gameLostObjects;
@@ -79,6 +82,15 @@ public class ReportController : MonoBehaviour
         currentArea = newArea;
 
         onNewReport.Raise();
+        StartCoroutine(ReportAnim());
     }
 
+    IEnumerator ReportAnim ()
+    {
+        radio.transform.DOLocalMove(new Vector3(0, 1.5f), 0.5f);
+        reportText.transform.parent.GetComponent<RectTransform>().DOAnchorPos3DY(50, 0.5f);
+        yield return new WaitForSeconds(5f);
+        radio.transform.DOLocalMove(Vector3.zero, 0.5f);
+        reportText.transform.parent.GetComponent<RectTransform>().DOAnchorPos3DY(-250, 0.5f);
+    }
 }
