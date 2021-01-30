@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
 
     public int totalTimeSecs = 60;
     public int score = 0;
-
+    public float collisionPenalty = 1f;
     float currentTime;
 
     bool isGameStarted = false;
@@ -49,18 +49,22 @@ public class GameController : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
+    public void OnCustomerCollision()
+    {
+        Debug.Log("TIME PENALTY : " + collisionPenalty);
+        currentTime -= collisionPenalty;
+        timeText.text = currentTime.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+    }
+
     private void OnGameEnd ()
     {
-        Debug.Log("Game end");
         gameEnd.Raise();
         isGameStarted = false;
     }
-
+    
     IEnumerator GameStartDelay ()
     {
-        Debug.Log("Delay start");
         yield return new WaitForSeconds(3f);
-        Debug.Log("Game start");
         gameStart.Raise();
         StartCountdown();
     }
