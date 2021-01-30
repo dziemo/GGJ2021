@@ -103,10 +103,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8017185223522976989}
   - component: {fileID: 8017185223522976994}
+  - component: {fileID: -8569803383738579433}
   - component: {fileID: 8017185223522976995}
   m_Layer: 0
   m_Name: Customer
-  m_TagString: Untagged
+  m_TagString: Customer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +136,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8017185223522976988}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -148,6 +149,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 3
+--- !u!136 &-8569803383738579433
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8017185223522976988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &8017185223522976995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 35
+  pushForce: 2
   speedLimits: {x: 4, y: 12}
 --- !u!1 &8017185223621585894
 GameObject:
