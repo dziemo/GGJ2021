@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LostObjectController : MonoBehaviour
 {
+    public string objectName;
+
     Outline outline;
 
     private void Awake()
