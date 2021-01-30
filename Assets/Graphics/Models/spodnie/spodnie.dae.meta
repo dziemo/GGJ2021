@@ -3,7 +3,12 @@ guid: c07811d5cb36ff045823daf5e3b6f387
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: spodnie-Material
+    second: {fileID: 2100000, guid: 00082e21c055c1b45980a07843b57804, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
