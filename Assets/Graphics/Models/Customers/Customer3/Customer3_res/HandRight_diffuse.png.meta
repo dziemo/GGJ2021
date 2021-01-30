@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 351638789255ab64e9419faf434e25a3
-=======
-guid: 65ac11ce609e61245bb5e2c4f3348d58
->>>>>>> main
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,21 +31,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
-    wrapU: -1
-    wrapV: -1
-    wrapW: -1
-=======
     filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
->>>>>>> main
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
@@ -76,10 +63,6 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-<<<<<<< HEAD
-    textureFormat: -1
-    textureCompression: 1
-=======
     textureFormat: 3
     textureCompression: 2
     compressionQuality: 50
@@ -106,7 +89,30 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: 3
     textureCompression: 2
->>>>>>> main
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 3
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 3
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

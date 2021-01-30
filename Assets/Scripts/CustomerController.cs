@@ -6,7 +6,6 @@ using DG.Tweening;
 
 public class CustomerController : MonoBehaviour
 {
-    public Animator anim;
     public CapsuleCollider mainColl;
     public Vector2 speedLimits = new Vector2(4f, 12f);
 
@@ -17,7 +16,7 @@ public class CustomerController : MonoBehaviour
     public Transform modelsParent;
 
     NavMeshAgent agent;
-
+    Animator anim;
     List<GameObject> models = new List<GameObject>();
 
     bool isDisabled = false;
@@ -30,7 +29,9 @@ public class CustomerController : MonoBehaviour
             t.gameObject.SetActive(false);
         }
 
-        models[Random.Range(0, models.Count)].SetActive(true);
+        var index = Random.Range(0, models.Count);
+        models[index].SetActive(true);
+        anim = models[index].GetComponent<Animator>();
 
         agent = GetComponent<NavMeshAgent>();
         agent.speed = Random.Range(speedLimits.x, speedLimits.y);
@@ -64,6 +65,7 @@ public class CustomerController : MonoBehaviour
         PickNewPoint();
         agent.isStopped = true;
         agent.speed = Random.Range(speedLimits.x, speedLimits.y);
+        SetIdleAnim();
         yield return new WaitForSeconds(Random.Range(3f, 10f));
         agent.isStopped = false;
         SetMoveAnim();
@@ -120,5 +122,10 @@ public class CustomerController : MonoBehaviour
         {
             anim.SetBool("Run", true);
         }
+    }
+
+    private void SetIdleAnim()
+    {
+        anim.SetTrigger("Idle" + Random.Range(1, 4));
     }
 }
