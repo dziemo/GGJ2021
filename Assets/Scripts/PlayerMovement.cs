@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public Transform cam;
     public Animator anim;
-
+    public AudioSource footSteps;
+    public AudioSource punchSound;
     public GameEvent onCustomerCollision;
 
     public float speed = 5f;
@@ -75,10 +76,15 @@ public class PlayerMovement : MonoBehaviour
             processedDir *= speed;
 
             anim.SetBool("Run", true);
+            if (!footSteps.isPlaying)
+            {
+                footSteps.Play();
+            }
         }
         else
         {
             anim.SetBool("Run", false);
+            footSteps.Stop();
         }
 
         velocity.y += gravity * Time.deltaTime;
@@ -92,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
         {
             coll.GetComponent<CustomerController>().OnPlayerCollision(transform.position);
             onCustomerCollision.Raise();
+            punchSound.Play();
         }
     }
 }

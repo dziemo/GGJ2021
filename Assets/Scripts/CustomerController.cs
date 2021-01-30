@@ -13,6 +13,8 @@ public class CustomerController : MonoBehaviour
     public float pushForce = 1f;
     public float runTreshold = 6f;
 
+    public AudioSource collisionGrunt;
+
     public Transform modelsParent;
 
     NavMeshAgent agent;
@@ -75,6 +77,8 @@ public class CustomerController : MonoBehaviour
     {
         if (!isDisabled)
         {
+            collisionGrunt.Play();
+
             anim.SetBool("Walk", false);
             anim.SetBool("Run", false);
             anim.SetTrigger("Collided");

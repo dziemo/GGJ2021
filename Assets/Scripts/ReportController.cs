@@ -14,6 +14,8 @@ public class ReportController : MonoBehaviour
     public TextMeshProUGUI possibleLocationsText;
     public TextMeshProUGUI reportText;
 
+    public AudioSource reportSound;
+
     public GameObject radio;
 
     List<string> gameNames;
@@ -83,6 +85,7 @@ public class ReportController : MonoBehaviour
 
         onNewReport.Raise();
         StartCoroutine(ReportAnim());
+        reportSound.Play();
     }
 
     IEnumerator ReportAnim ()
