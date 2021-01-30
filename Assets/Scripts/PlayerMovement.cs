@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using ScriptableObjectArchitecture;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public Transform cam;
     public Animator anim;
+
+    public GameEvent onCustomerCollision;
 
     public float speed = 5f;
     public float turnSmoothTime = 0.1f;
@@ -80,5 +83,14 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         
         controller.Move((velocity + processedDir) * Time.deltaTime);    
+    }
+
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.CompareTag("Customer"))
+        {
+            coll.GetComponent<CustomerController>().OnPlayerCollision(transform.position);
+            onCustomerCollision.Raise();
+        }
     }
 }
