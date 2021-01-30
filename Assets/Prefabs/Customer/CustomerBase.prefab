@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 612794669433896283}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
+  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
   m_Children:
   - {fileID: 496529343975241771}
   - {fileID: 1950319355074309948}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: -8569803383738579433}
   - component: {fileID: 8017185223522976995}
   m_Layer: 0
-  m_Name: Customer
+  m_Name: CustomerBase
   m_TagString: Customer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,7 +175,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8017185223522976988}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -187,7 +187,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 3
+  m_ObstacleAvoidanceType: 4
 --- !u!136 &379635947
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
+  m_Radius: 0.5
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -212,8 +212,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.6
-  m_Height: 1.7
+  m_Radius: 0.76
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &8017185223522976995
@@ -228,7 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1807af4643195f94a874b7158e09eeaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
   mainColl: {fileID: -8569803383738579433}
   speedLimits: {x: 2, y: 7}
   maxDistance: 35
@@ -336,7 +335,7 @@ PrefabInstance:
     - target: {fileID: 1416492393901362292, guid: 7f992527cf0db4e4782b3bfccb640da9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1793476085396592334, guid: 7f992527cf0db4e4782b3bfccb640da9,
         type: 3}
