@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2021-01-30T17:46:45Z</created>
+    <modified>2021-01-30T17:46:45Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="Swietlowka-diffuse-tex" name="Swietlowka-diffuse-tex">
+      <init_from>Swietlowka_diffuse.png</init_from>
+    </image>
+    <image id="Swietlowka-emissive-tex" name="Swietlowka-emissive-tex">
+      <init_from>Swietlowka_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="Swietlowka-Effect">
+      <profile_COMMON>
+        <newparam sid="Swietlowka-diffuse-surface">
+          <surface type="2D">
+            <init_from>Swietlowka-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Swietlowka-emissive-surface">
+          <surface type="2D">
+            <init_from>Swietlowka-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Swietlowka-diffuse-sampler">
+          <sampler2D>
+            <source>Swietlowka-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Swietlowka-emissive-sampler">
+          <sampler2D>
+            <source>Swietlowka-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="Swietlowka-tex-bind" texture="Swietlowka-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="Swietlowka-tex-bind" texture="Swietlowka-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Swietlowka-Material">
+      <instance_effect url="#Swietlowka-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Swietlowka-Geom" name="Swietlowka-Geom">
+      <mesh>
+        <source id="Swietlowka-Pos">
+          <float_array count="336" id="Swietlowka-Pos-array">-8.0 0.0 1.5 -8.0 3.0 1.5 -8.0 3.0 -1.5 -8.0 0.0 -1.5 -8.0 -1.0 0.5 -8.0 0.0 0.5 -8.0 0.0 -0.5 -8.0 -1.0 -0.5 7.0 1.0 -0.5 7.0 2.0 -0.5 7.0 2.0 -1.5 7.0 1.0 -1.5 7.0 1.0 1.5 7.0 2.0 1.5 7.0 2.0 0.5 7.0 1.0 0.5 -7.0 1.0 -1.5 -7.0 2.0 -1.5 -7.0 2.0 -0.5 -7.0 1.0 -0.5 -7.0 1.0 0.5 -7.0 2.0 0.5 -7.0 2.0 1.5 -7.0 1.0 1.5 8.0 0.0 -1.5 8.0 3.0 -1.5 8.0 3.0 1.5 8.0 0.0 1.5 8.0 -1.0 -0.5 8.0 0.0 -0.5 8.0 0.0 0.5 8.0 -1.0 0.5 -8.0 -1.0 -0.5 8.0 -1.0 -0.5 8.0 -1.0 0.5 -8.0 -1.0 0.5 -8.0 0.0 -1.5 8.0 0.0 -1.5 8.0 0.0 -0.5 -8.0 0.0 -0.5 -8.0 0.0 0.5 8.0 0.0 0.5 8.0 0.0 1.5 -8.0 0.0 1.5 -7.0 2.0 -1.5 7.0 2.0 -1.5 7.0 2.0 -0.5 -7.0 2.0 -0.5 -7.0 2.0 0.5 7.0 2.0 0.5 7.0 2.0 1.5 -7.0 2.0 1.5 -7.0 1.0 -0.5 7.0 1.0 -0.5 7.0 1.0 -1.5 -7.0 1.0 -1.5 -7.0 1.0 1.5 7.0 1.0 1.5 7.0 1.0 0.5 -7.0 1.0 0.5 -8.0 3.0 1.5 8.0 3.0 1.5 8.0 3.0 -1.5 -8.0 3.0 -1.5 -8.0 1.0 -1.5 8.0 1.0 -1.5 8.0 0.0 -1.5 -8.0 0.0 -1.5 -8.0 3.0 -1.5 8.0 3.0 -1.5 8.0 2.0 -1.5 -8.0 2.0 -1.5 -8.0 2.0 -1.5 -7.0 2.0 -1.5 -7.0 1.0 -1.5 -8.0 1.0 -1.5 7.0 2.0 -1.5 8.0 2.0 -1.5 8.0 1.0 -1.5 7.0 1.0 -1.5 -8.0 0.0 -0.5 8.0 0.0 -0.5 8.0 -1.0 -0.5 -8.0 -1.0 -0.5 -7.0 2.0 -0.5 7.0 2.0 -0.5 7.0 1.0 -0.5 -7.0 1.0 -0.5 -8.0 -1.0 0.5 8.0 -1.0 0.5 8.0 0.0 0.5 -8.0 0.0 0.5 -7.0 1.0 0.5 7.0 1.0 0.5 7.0 2.0 0.5 -7.0 2.0 0.5 -8.0 0.0 1.5 8.0 0.0 1.5 8.0 1.0 1.5 -8.0 1.0 1.5 -8.0 2.0 1.5 8.0 2.0 1.5 8.0 3.0 1.5 -8.0 3.0 1.5 -8.0 1.0 1.5 -7.0 1.0 1.5 -7.0 2.0 1.5 -8.0 2.0 1.5 7.0 1.0 1.5 8.0 1.0 1.5 8.0 2.0 1.5 7.0 2.0 1.5 </float_array>
+          <technique_common>
+            <accessor count="112" source="#Swietlowka-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Swietlowka-UV">
+          <float_array count="224" id="Swietlowka-UV-array">0.0 0.90625 0.046875 0.90625 0.046875 1.0 0.0 1.0 0.0 0.96875 0.015625 0.96875 0.015625 1.0 0.0 1.0 0.0 0.96875 0.015625 0.96875 0.015625 1.0 0.0 1.0 0.0 0.96875 0.015625 0.96875 0.015625 1.0 0.0 1.0 0.0 1.0 0.015625 1.0 0.015625 0.96875 0.0 0.96875 0.0 1.0 0.015625 1.0 0.015625 0.96875 0.0 0.96875 0.0 1.0 0.046875 1.0 0.046875 0.90625 0.0 0.90625 0.0 1.0 0.015625 1.0 0.015625 0.96875 0.0 0.96875 0.28125 0.5 0.28125 1.0 0.296875 1.0 0.296875 0.5 0.28125 0.5 0.28125 1.0 0.296875 1.0 0.296875 0.5 0.28125 0.5 0.28125 1.0 0.296875 1.0 0.296875 0.5 0.328125 0.5625 0.328125 1.0 0.34375 1.0 0.34375 0.5625 0.328125 0.5625 0.328125 1.0 0.34375 1.0 0.34375 0.5625 0.296875 0.53125 0.296875 0.96875 0.28125 0.96875 0.28125 0.53125 0.296875 0.53125 0.296875 0.96875 0.28125 0.96875 0.28125 0.53125 0.421875 0.5 0.421875 1.0 0.375 1.0 0.375 0.5 0.296875 0.5 0.296875 1.0 0.28125 1.0 0.28125 0.5 0.390625 0.5 0.390625 1.0 0.375 1.0 0.375 0.5 0.0 0.96875 0.015625 0.96875 0.015625 1.0 0.0 1.0 0.0 0.96875 0.015625 0.96875 0.015625 1.0 0.0 1.0 0.296875 0.5 0.296875 1.0 0.28125 1.0 0.28125 0.5 0.296875 0.53125 0.296875 0.96875 0.28125 0.96875 0.28125 0.53125 0.28125 0.5 0.28125 1.0 0.296875 1.0 0.296875 0.5 0.28125 0.53125 0.28125 0.96875 0.296875 0.96875 0.296875 0.53125 0.28125 0.5 0.28125 1.0 0.296875 1.0 0.296875 0.5 0.375 0.5 0.375 1.0 0.390625 1.0 0.390625 0.5 0.0 1.0 0.015625 1.0 0.015625 0.96875 0.0 0.96875 0.0 1.0 0.015625 1.0 0.015625 0.96875 0.0 0.96875 </float_array>
+          <technique_common>
+            <accessor count="112" source="#Swietlowka-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Swietlowka-Normal">
+          <float_array count="18" id="Swietlowka-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#Swietlowka-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Swietlowka-Vertices">
+          <input semantic="POSITION" source="#Swietlowka-Pos"/>
+        </vertices>
+        <polylist count="28" material="Swietlowka-Material">
+          <input offset="0" semantic="VERTEX" source="#Swietlowka-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#Swietlowka-UV"/>
+          <input offset="2" semantic="NORMAL" source="#Swietlowka-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 0 13 13 0 14 14 0 15 15 0 16 16 1 17 17 1 18 18 1 19 19 1 20 20 1 21 21 1 22 22 1 23 23 1 24 24 1 25 25 1 26 26 1 27 27 1 28 28 1 29 29 1 30 30 1 31 31 1 32 32 2 33 33 2 34 34 2 35 35 2 36 36 2 37 37 2 38 38 2 39 39 2 40 40 2 41 41 2 42 42 2 43 43 2 44 44 2 45 45 2 46 46 2 47 47 2 48 48 2 49 49 2 50 50 2 51 51 2 52 52 3 53 53 3 54 54 3 55 55 3 56 56 3 57 57 3 58 58 3 59 59 3 60 60 3 61 61 3 62 62 3 63 63 3 64 64 4 65 65 4 66 66 4 67 67 4 68 68 4 69 69 4 70 70 4 71 71 4 72 72 4 73 73 4 74 74 4 75 75 4 76 76 4 77 77 4 78 78 4 79 79 4 80 80 4 81 81 4 82 82 4 83 83 4 84 84 4 85 85 4 86 86 4 87 87 4 88 88 5 89 89 5 90 90 5 91 91 5 92 92 5 93 93 5 94 94 5 95 95 5 96 96 5 97 97 5 98 98 5 99 99 5 100 100 5 101 101 5 102 102 5 103 103 5 104 104 5 105 105 5 106 106 5 107 107 5 108 108 5 109 109 5 110 110 5 111 111 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations/>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="Swietlowka" name="Swietlowka">
+        <translate>0 0 0</translate>
+        <rotate>0 0 1 0</rotate>
+        <rotate>0 1 0 0</rotate>
+        <rotate>1 0 0 0</rotate>
+        <scale>1 1 1</scale>
+        <instance_geometry url="#Swietlowka-Geom">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Swietlowka-Material" target="#Swietlowka-Material">
+                <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="Swietlowka-tex-bind"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
