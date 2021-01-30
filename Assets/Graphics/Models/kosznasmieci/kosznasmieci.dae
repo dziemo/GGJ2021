@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2021-01-30T14:19:56Z</created>
+    <modified>2021-01-30T14:19:56Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="kosznasmieci-diffuse-tex" name="kosznasmieci-diffuse-tex">
+      <init_from>kosznasmieci_diffuse.png</init_from>
+    </image>
+    <image id="kosznasmieci-emissive-tex" name="kosznasmieci-emissive-tex">
+      <init_from>kosznasmieci_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="kosznasmieci-Effect">
+      <profile_COMMON>
+        <newparam sid="kosznasmieci-diffuse-surface">
+          <surface type="2D">
+            <init_from>kosznasmieci-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="kosznasmieci-emissive-surface">
+          <surface type="2D">
+            <init_from>kosznasmieci-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="kosznasmieci-diffuse-sampler">
+          <sampler2D>
+            <source>kosznasmieci-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="kosznasmieci-emissive-sampler">
+          <sampler2D>
+            <source>kosznasmieci-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="kosznasmieci-tex-bind" texture="kosznasmieci-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="kosznasmieci-tex-bind" texture="kosznasmieci-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="kosznasmieci-Material">
+      <instance_effect url="#kosznasmieci-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="kosznasmieci-Geom" name="kosznasmieci-Geom">
+      <mesh>
+        <source id="kosznasmieci-Pos">
+          <float_array count="264" id="kosznasmieci-Pos-array">-1.0 -4.0 3.0 -1.0 1.0 3.0 -1.0 1.0 -2.0 -1.0 -4.0 -2.0 -1.0 3.0 3.0 -1.0 4.0 3.0 -1.0 4.0 -2.0 -1.0 3.0 -2.0 0.0 1.0 -1.0 0.0 3.0 -1.0 0.0 3.0 -2.0 0.0 1.0 -2.0 0.0 1.0 3.0 0.0 3.0 3.0 0.0 3.0 2.0 0.0 1.0 2.0 1.0 -1.0 2.0 1.0 3.0 2.0 1.0 3.0 -1.0 1.0 -1.0 -1.0 0.0 -1.0 -1.0 0.0 1.0 -1.0 0.0 1.0 2.0 0.0 -1.0 2.0 2.0 -4.0 -2.0 2.0 4.0 -2.0 2.0 4.0 3.0 2.0 -4.0 3.0 -1.0 -4.0 -2.0 2.0 -4.0 -2.0 2.0 -4.0 3.0 -1.0 -4.0 3.0 -1.0 3.0 -1.0 1.0 3.0 -1.0 1.0 3.0 2.0 -1.0 3.0 2.0 -1.0 3.0 -2.0 0.0 3.0 -2.0 0.0 3.0 -1.0 -1.0 3.0 -1.0 -1.0 3.0 2.0 0.0 3.0 2.0 0.0 3.0 3.0 -1.0 3.0 3.0 0.0 -1.0 2.0 1.0 -1.0 2.0 1.0 -1.0 -1.0 0.0 -1.0 -1.0 -1.0 1.0 3.0 0.0 1.0 3.0 0.0 1.0 -2.0 -1.0 1.0 -2.0 -1.0 4.0 3.0 2.0 4.0 3.0 2.0 4.0 -2.0 -1.0 4.0 -2.0 0.0 4.0 -2.0 2.0 4.0 -2.0 2.0 -4.0 -2.0 0.0 -4.0 -2.0 -1.0 1.0 -2.0 0.0 1.0 -2.0 0.0 -4.0 -2.0 -1.0 -4.0 -2.0 -1.0 4.0 -2.0 0.0 4.0 -2.0 0.0 3.0 -2.0 -1.0 3.0 -2.0 0.0 3.0 2.0 1.0 3.0 2.0 1.0 -1.0 2.0 0.0 -1.0 2.0 0.0 -1.0 -1.0 1.0 -1.0 -1.0 1.0 3.0 -1.0 0.0 3.0 -1.0 0.0 -4.0 3.0 2.0 -4.0 3.0 2.0 4.0 3.0 0.0 4.0 3.0 -1.0 -4.0 3.0 0.0 -4.0 3.0 0.0 1.0 3.0 -1.0 1.0 3.0 -1.0 3.0 3.0 0.0 3.0 3.0 0.0 4.0 3.0 -1.0 4.0 3.0 </float_array>
+          <technique_common>
+            <accessor count="88" source="#kosznasmieci-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="kosznasmieci-UV">
+          <float_array count="176" id="kosznasmieci-UV-array">0.0 0.84375 0.15625 0.84375 0.15625 1.0 0.0 1.0 0.21875 0.84375 0.25 0.84375 0.25 1.0 0.21875 1.0 0.34375 0.9375 0.34375 1.0 0.3125 1.0 0.3125 0.9375 0.25 0.9375 0.25 1.0 0.21875 1.0 0.21875 0.9375 0.5 0.875 0.5 1.0 0.40625 1.0 0.40625 0.875 0.09375 0.96875 0.15625 0.96875 0.15625 0.875 0.09375 0.875 0.0 0.4375 0.0 0.6875 0.15625 0.6875 0.15625 0.4375 0.3125 0.6875 0.40625 0.6875 0.40625 0.53125 0.3125 0.53125 0.0 0.6875 0.0625 0.6875 0.0625 0.59375 0.0 0.59375 0.21875 1.0 0.25 1.0 0.25 0.96875 0.21875 0.96875 0.21875 1.0 0.25 1.0 0.25 0.96875 0.21875 0.96875 0.34375 0.5625 0.375 0.5625 0.375 0.65625 0.34375 0.65625 0.0 0.84375 0.03125 0.84375 0.03125 1.0 0.0 1.0 0.46875 0.53125 0.5625 0.53125 0.5625 0.6875 0.46875 0.6875 0.625 0.75 0.6875 0.75 0.6875 1.0 0.625 1.0 0.0 0.84375 0.03125 0.84375 0.03125 1.0 0.0 1.0 0.21875 0.96875 0.25 0.96875 0.25 1.0 0.21875 1.0 0.625 0.78125 0.65625 0.78125 0.65625 0.90625 0.625 0.90625 0.625 0.90625 0.65625 0.90625 0.65625 0.78125 0.625 0.78125 0.625 1.0 0.6875 1.0 0.6875 0.75 0.625 0.75 0.0 1.0 0.03125 1.0 0.03125 0.84375 0.0 0.84375 0.21875 1.0 0.25 1.0 0.25 0.96875 0.21875 0.96875 </float_array>
+          <technique_common>
+            <accessor count="88" source="#kosznasmieci-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="kosznasmieci-Normal">
+          <float_array count="18" id="kosznasmieci-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#kosznasmieci-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="kosznasmieci-Vertices">
+          <input semantic="POSITION" source="#kosznasmieci-Pos"/>
+        </vertices>
+        <polylist count="22" material="kosznasmieci-Material">
+          <input offset="0" semantic="VERTEX" source="#kosznasmieci-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#kosznasmieci-UV"/>
+          <input offset="2" semantic="NORMAL" source="#kosznasmieci-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 0 13 13 0 14 14 0 15 15 0 16 16 0 17 17 0 18 18 0 19 19 0 20 20 1 21 21 1 22 22 1 23 23 1 24 24 1 25 25 1 26 26 1 27 27 1 28 28 2 29 29 2 30 30 2 31 31 2 32 32 2 33 33 2 34 34 2 35 35 2 36 36 2 37 37 2 38 38 2 39 39 2 40 40 2 41 41 2 42 42 2 43 43 2 44 44 3 45 45 3 46 46 3 47 47 3 48 48 3 49 49 3 50 50 3 51 51 3 52 52 3 53 53 3 54 54 3 55 55 3 56 56 4 57 57 4 58 58 4 59 59 4 60 60 4 61 61 4 62 62 4 63 63 4 64 64 4 65 65 4 66 66 4 67 67 4 68 68 4 69 69 4 70 70 4 71 71 4 72 72 5 73 73 5 74 74 5 75 75 5 76 76 5 77 77 5 78 78 5 79 79 5 80 80 5 81 81 5 82 82 5 83 83 5 84 84 5 85 85 5 86 86 5 87 87 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations/>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="kosznasmieci" name="kosznasmieci">
+        <translate>0 0 0</translate>
+        <rotate>0 0 1 0</rotate>
+        <rotate>0 1 0 0</rotate>
+        <rotate>1 0 0 0</rotate>
+        <scale>1 1 1</scale>
+        <instance_geometry url="#kosznasmieci-Geom">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="kosznasmieci-Material" target="#kosznasmieci-Material">
+                <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="kosznasmieci-tex-bind"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
