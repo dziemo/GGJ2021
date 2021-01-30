@@ -101,7 +101,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - ColorChange: {r: 0.5529412, g: 0.59180003, b: 0.44335175, a: 0}
+    - ColorChange: {r: 1, g: 0.46364683, b: 0, a: 0}
     - Color_tex: {r: 0, g: 2.352941, b: 4, a: 0}
     - _BaseColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}

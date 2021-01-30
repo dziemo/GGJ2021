@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class AreaController : MonoBehaviour
 {
-    List<Transform> spawnPoints = new List<Transform>();
-
+    public string areaName;
     public Transform spawnsParent;
+
+    List<Transform> spawnPoints = new List<Transform>();
 
     private void Awake()
     {
