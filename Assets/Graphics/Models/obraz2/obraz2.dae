@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2021-01-30T21:58:15Z</created>
+    <modified>2021-01-30T21:58:15Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="obraz2-diffuse-tex" name="obraz2-diffuse-tex">
+      <init_from>obraz2_diffuse.png</init_from>
+    </image>
+    <image id="obraz2-emissive-tex" name="obraz2-emissive-tex">
+      <init_from>obraz2_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="obraz2-Effect">
+      <profile_COMMON>
+        <newparam sid="obraz2-diffuse-surface">
+          <surface type="2D">
+            <init_from>obraz2-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="obraz2-emissive-surface">
+          <surface type="2D">
+            <init_from>obraz2-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="obraz2-diffuse-sampler">
+          <sampler2D>
+            <source>obraz2-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="obraz2-emissive-sampler">
+          <sampler2D>
+            <source>obraz2-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="obraz2-tex-bind" texture="obraz2-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="obraz2-tex-bind" texture="obraz2-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="obraz2-Material">
+      <instance_effect url="#obraz2-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="obraz2-Geom" name="obraz2-Geom">
+      <mesh>
+        <source id="obraz2-Pos">
+          <float_array count="72" id="obraz2-Pos-array">-16.0 -16.0 1.0 -16.0 16.0 1.0 -16.0 16.0 -1.0 -16.0 -16.0 -1.0 16.0 -16.0 -1.0 16.0 16.0 -1.0 16.0 16.0 1.0 16.0 -16.0 1.0 -16.0 -16.0 -1.0 16.0 -16.0 -1.0 16.0 -16.0 1.0 -16.0 -16.0 1.0 -16.0 16.0 1.0 16.0 16.0 1.0 16.0 16.0 -1.0 -16.0 16.0 -1.0 -16.0 16.0 -1.0 16.0 16.0 -1.0 16.0 -16.0 -1.0 -16.0 -16.0 -1.0 -16.0 -16.0 1.0 16.0 -16.0 1.0 16.0 16.0 1.0 -16.0 16.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="24" source="#obraz2-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="obraz2-UV">
+          <float_array count="48" id="obraz2-UV-array">0.015625 0.75 0.015625 1.0 0.0 1.0 0.0 0.75 0.0 0.75 0.0 1.0 0.015625 1.0 0.015625 0.75 0.0 0.75 0.0 1.0 0.015625 1.0 0.015625 0.75 0.015625 0.75 0.015625 1.0 0.0 1.0 0.0 0.75 0.265625 0.75 0.515625 0.75 0.515625 1.0 0.265625 1.0 0.0 0.734375 0.25 0.734375 0.25 0.484375 0.0 0.484375 </float_array>
+          <technique_common>
+            <accessor count="24" source="#obraz2-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="obraz2-Normal">
+          <float_array count="18" id="obraz2-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#obraz2-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="obraz2-Vertices">
+          <input semantic="POSITION" source="#obraz2-Pos"/>
+        </vertices>
+        <polylist count="6" material="obraz2-Material">
+          <input offset="0" semantic="VERTEX" source="#obraz2-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#obraz2-UV"/>
+          <input offset="2" semantic="NORMAL" source="#obraz2-Normal"/>
+          <vcount>4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 1 5 5 1 6 6 1 7 7 1 8 8 2 9 9 2 10 10 2 11 11 2 12 12 3 13 13 3 14 14 3 15 15 3 16 16 4 17 17 4 18 18 4 19 19 4 20 20 5 21 21 5 22 22 5 23 23 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations/>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="obraz2" name="obraz2">
+        <translate>0 0 0</translate>
+        <rotate>0 0 1 0</rotate>
+        <rotate>0 1 0 0</rotate>
+        <rotate>1 0 0 0</rotate>
+        <scale>1 1 1</scale>
+        <instance_geometry url="#obraz2-Geom">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="obraz2-Material" target="#obraz2-Material">
+                <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="obraz2-tex-bind"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
