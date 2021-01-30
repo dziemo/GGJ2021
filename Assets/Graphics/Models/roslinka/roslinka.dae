@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2021-01-29T19:56:01Z</created>
+    <modified>2021-01-29T19:56:01Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="roslinka-diffuse-tex" name="roslinka-diffuse-tex">
+      <init_from>roslinka_diffuse.png</init_from>
+    </image>
+    <image id="roslinka-emissive-tex" name="roslinka-emissive-tex">
+      <init_from>roslinka_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="roslinka-Effect">
+      <profile_COMMON>
+        <newparam sid="roslinka-diffuse-surface">
+          <surface type="2D">
+            <init_from>roslinka-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="roslinka-emissive-surface">
+          <surface type="2D">
+            <init_from>roslinka-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="roslinka-diffuse-sampler">
+          <sampler2D>
+            <source>roslinka-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="roslinka-emissive-sampler">
+          <sampler2D>
+            <source>roslinka-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="roslinka-tex-bind" texture="roslinka-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="roslinka-tex-bind" texture="roslinka-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="roslinka-Material">
+      <instance_effect url="#roslinka-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="roslinka-Geom" name="roslinka-Geom">
+      <mesh>
+        <source id="roslinka-Pos">
+          <float_array count="480" id="roslinka-Pos-array">-2.0 -7.0 2.0 -2.0 -4.0 2.0 -2.0 -4.0 -3.0 -2.0 -7.0 -3.0 -1.0 -4.0 1.0 -1.0 1.0 1.0 -1.0 1.0 0.0 -1.0 -4.0 0.0 -1.0 -8.0 1.0 -1.0 -7.0 1.0 -1.0 -7.0 -2.0 -1.0 -8.0 -2.0 0.0 -5.0 0.0 0.0 3.0 0.0 0.0 3.0 -1.0 0.0 -5.0 -1.0 1.0 -5.0 -1.0 1.0 1.0 -1.0 1.0 1.0 -2.0 1.0 -5.0 -2.0 2.0 -5.0 1.0 2.0 -4.0 1.0 2.0 -4.0 -1.0 2.0 -5.0 -1.0 -1.0 -5.0 -2.0 -1.0 -4.0 -2.0 -1.0 -4.0 0.0 -1.0 -5.0 0.0 0.0 -5.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 0.0 -5.0 1.0 1.0 -5.0 -1.0 1.0 3.0 -1.0 1.0 3.0 0.0 1.0 -5.0 0.0 2.0 -4.0 -2.0 2.0 1.0 -2.0 2.0 1.0 -1.0 2.0 -4.0 -1.0 2.0 -8.0 -2.0 2.0 -7.0 -2.0 2.0 -7.0 1.0 2.0 -8.0 1.0 3.0 -7.0 -3.0 3.0 -4.0 -3.0 3.0 -4.0 2.0 3.0 -7.0 2.0 -1.0 -8.0 -2.0 2.0 -8.0 -2.0 2.0 -8.0 1.0 -1.0 -8.0 1.0 -2.0 -7.0 -3.0 3.0 -7.0 -3.0 3.0 -7.0 -2.0 -2.0 -7.0 -2.0 -2.0 -7.0 1.0 3.0 -7.0 1.0 3.0 -7.0 2.0 -2.0 -7.0 2.0 -2.0 -7.0 -2.0 -1.0 -7.0 -2.0 -1.0 -7.0 1.0 -2.0 -7.0 1.0 2.0 -7.0 -2.0 3.0 -7.0 -2.0 3.0 -7.0 1.0 2.0 -7.0 1.0 -1.0 -5.0 -1.0 1.0 -5.0 -1.0 1.0 -5.0 -2.0 -1.0 -5.0 -2.0 1.0 -5.0 1.0 2.0 -5.0 1.0 2.0 -5.0 -1.0 1.0 -5.0 -1.0 -1.0 -5.0 0.0 0.0 -5.0 0.0 0.0 -5.0 -1.0 -1.0 -5.0 -1.0 0.0 -5.0 1.0 1.0 -5.0 1.0 1.0 -5.0 0.0 0.0 -5.0 0.0 -2.0 -4.0 -2.0 3.0 -4.0 -2.0 3.0 -4.0 -3.0 -2.0 -4.0 -3.0 -2.0 -4.0 2.0 3.0 -4.0 2.0 3.0 -4.0 1.0 -2.0 -4.0 1.0 -2.0 -4.0 1.0 -1.0 -4.0 1.0 -1.0 -4.0 -2.0 -2.0 -4.0 -2.0 2.0 -4.0 1.0 3.0 -4.0 1.0 3.0 -4.0 -2.0 2.0 -4.0 -2.0 1.0 1.0 -1.0 2.0 1.0 -1.0 2.0 1.0 -2.0 1.0 1.0 -2.0 -1.0 1.0 1.0 0.0 1.0 1.0 0.0 1.0 0.0 -1.0 1.0 0.0 0.0 3.0 0.0 1.0 3.0 0.0 1.0 3.0 -1.0 0.0 3.0 -1.0 -2.0 -4.0 -3.0 3.0 -4.0 -3.0 3.0 -7.0 -3.0 -2.0 -7.0 -3.0 1.0 1.0 -2.0 2.0 1.0 -2.0 2.0 -4.0 -2.0 1.0 -4.0 -2.0 -1.0 -7.0 -2.0 2.0 -7.0 -2.0 2.0 -8.0 -2.0 -1.0 -8.0 -2.0 0.0 3.0 -1.0 1.0 3.0 -1.0 1.0 -5.0 -1.0 0.0 -5.0 -1.0 -1.0 1.0 0.0 0.0 1.0 0.0 0.0 -5.0 0.0 -1.0 -5.0 0.0 0.0 -4.0 1.0 2.0 -4.0 1.0 2.0 -5.0 1.0 0.0 -5.0 1.0 -1.0 -5.0 -2.0 1.0 -5.0 -2.0 1.0 -4.0 -2.0 -1.0 -4.0 -2.0 1.0 -5.0 -1.0 2.0 -5.0 -1.0 2.0 1.0 -1.0 1.0 1.0 -1.0 0.0 -5.0 0.0 1.0 -5.0 0.0 1.0 3.0 0.0 0.0 3.0 0.0 -1.0 -4.0 1.0 0.0 -4.0 1.0 0.0 1.0 1.0 -1.0 1.0 1.0 -1.0 -8.0 1.0 2.0 -8.0 1.0 2.0 -7.0 1.0 -1.0 -7.0 1.0 -2.0 -7.0 2.0 3.0 -7.0 2.0 3.0 -4.0 2.0 -2.0 -4.0 2.0 </float_array>
+          <technique_common>
+            <accessor count="160" source="#roslinka-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="roslinka-UV">
+          <float_array count="320" id="roslinka-UV-array">0.0 0.921875 0.046875 0.921875 0.046875 1.0 0.0 1.0 0.015625 0.8125 0.015625 0.890625 0.0 0.890625 0.0 0.8125 0.0 0.953125 0.015625 0.953125 0.015625 1.0 0.0 1.0 0.09375 0.875 0.09375 1.0 0.078125 1.0 0.078125 0.875 0.09375 0.75 0.09375 0.84375 0.078125 0.84375 0.078125 0.75 0.015625 0.96875 0.03125 0.96875 0.03125 1.0 0.015625 1.0 0.0 1.0 0.015625 1.0 0.015625 0.96875 0.0 0.96875 0.125 0.90625 0.125 1.0 0.140625 1.0 0.140625 0.90625 0.125 0.75 0.125 0.875 0.140625 0.875 0.140625 0.75 0.171875 0.921875 0.171875 1.0 0.1875 1.0 0.1875 0.921875 0.015625 0.984375 0.03125 0.984375 0.03125 0.9375 0.015625 0.9375 0.171875 0.875 0.21875 0.875 0.21875 0.796875 0.171875 0.796875 0.28125 1.0 0.328125 1.0 0.328125 0.953125 0.28125 0.953125 0.21875 0.921875 0.21875 1.0 0.234375 1.0 0.234375 0.921875 0.28125 0.84375 0.28125 0.921875 0.296875 0.921875 0.296875 0.84375 0.0 0.984375 0.015625 0.984375 0.015625 0.9375 0.0 0.9375 0.015625 0.984375 0.03125 0.984375 0.03125 0.9375 0.015625 0.9375 0.015625 0.75 0.015625 0.78125 0.0 0.78125 0.0 0.75 0.359375 0.96875 0.375 0.96875 0.375 1.0 0.359375 1.0 0.171875 0.75 0.1875 0.75 0.1875 0.765625 0.171875 0.765625 0.21875 0.75 0.234375 0.75 0.234375 0.765625 0.21875 0.765625 0.046875 0.921875 0.046875 1.0 0.03125 1.0 0.03125 0.921875 0.046875 0.921875 0.046875 1.0 0.03125 1.0 0.03125 0.921875 0.03125 0.9375 0.046875 0.9375 0.046875 0.984375 0.03125 0.984375 0.03125 0.9375 0.046875 0.9375 0.046875 0.984375 0.03125 0.984375 0.078125 0.984375 0.09375 0.984375 0.09375 1.0 0.078125 1.0 0.078125 0.984375 0.09375 0.984375 0.09375 1.0 0.078125 1.0 0.078125 0.984375 0.09375 0.984375 0.09375 1.0 0.078125 1.0 0.375 0.84375 0.375 0.921875 0.328125 0.921875 0.328125 0.84375 0.40625 0.84375 0.421875 0.84375 0.421875 0.921875 0.40625 0.921875 0.046875 0.9375 0.046875 0.984375 0.03125 0.984375 0.03125 0.9375 0.453125 0.796875 0.46875 0.796875 0.46875 0.921875 0.453125 0.921875 0.5 0.828125 0.515625 0.828125 0.515625 0.921875 0.5 0.921875 0.015625 0.96875 0.015625 1.0 0.0 1.0 0.0 0.96875 0.015625 0.96875 0.015625 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.71875 0.015625 0.71875 0.015625 0.625 0.0 0.625 0.0 0.59375 0.015625 0.59375 0.015625 0.46875 0.0 0.46875 0.046875 0.71875 0.0625 0.71875 0.0625 0.640625 0.046875 0.640625 0.03125 0.953125 0.03125 1.0 0.046875 1.0 0.046875 0.953125 0.09375 0.640625 0.09375 0.71875 0.140625 0.71875 0.140625 0.640625 </float_array>
+          <technique_common>
+            <accessor count="160" source="#roslinka-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="roslinka-Normal">
+          <float_array count="18" id="roslinka-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#roslinka-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="roslinka-Vertices">
+          <input semantic="POSITION" source="#roslinka-Pos"/>
+        </vertices>
+        <polylist count="40" material="roslinka-Material">
+          <input offset="0" semantic="VERTEX" source="#roslinka-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#roslinka-UV"/>
+          <input offset="2" semantic="NORMAL" source="#roslinka-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 0 13 13 0 14 14 0 15 15 0 16 16 0 17 17 0 18 18 0 19 19 0 20 20 0 21 21 0 22 22 0 23 23 0 24 24 1 25 25 1 26 26 1 27 27 1 28 28 1 29 29 1 30 30 1 31 31 1 32 32 1 33 33 1 34 34 1 35 35 1 36 36 1 37 37 1 38 38 1 39 39 1 40 40 1 41 41 1 42 42 1 43 43 1 44 44 1 45 45 1 46 46 1 47 47 1 48 48 2 49 49 2 50 50 2 51 51 2 52 52 2 53 53 2 54 54 2 55 55 2 56 56 2 57 57 2 58 58 2 59 59 2 60 60 2 61 61 2 62 62 2 63 63 2 64 64 2 65 65 2 66 66 2 67 67 2 68 68 3 69 69 3 70 70 3 71 71 3 72 72 3 73 73 3 74 74 3 75 75 3 76 76 3 77 77 3 78 78 3 79 79 3 80 80 3 81 81 3 82 82 3 83 83 3 84 84 3 85 85 3 86 86 3 87 87 3 88 88 3 89 89 3 90 90 3 91 91 3 92 92 3 93 93 3 94 94 3 95 95 3 96 96 3 97 97 3 98 98 3 99 99 3 100 100 3 101 101 3 102 102 3 103 103 3 104 104 3 105 105 3 106 106 3 107 107 3 108 108 3 109 109 3 110 110 3 111 111 3 112 112 4 113 113 4 114 114 4 115 115 4 116 116 4 117 117 4 118 118 4 119 119 4 120 120 4 121 121 4 122 122 4 123 123 4 124 124 4 125 125 4 126 126 4 127 127 4 128 128 4 129 129 4 130 130 4 131 131 4 132 132 4 133 133 4 134 134 4 135 135 4 136 136 5 137 137 5 138 138 5 139 139 5 140 140 5 141 141 5 142 142 5 143 143 5 144 144 5 145 145 5 146 146 5 147 147 5 148 148 5 149 149 5 150 150 5 151 151 5 152 152 5 153 153 5 154 154 5 155 155 5 156 156 5 157 157 5 158 158 5 159 159 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations/>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="roslinka" name="roslinka">
+        <translate>0 0 0</translate>
+        <rotate>0 0 1 0</rotate>
+        <rotate>0 1 0 0</rotate>
+        <rotate>1 0 0 0</rotate>
+        <scale>1 1 1</scale>
+        <instance_geometry url="#roslinka-Geom">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="roslinka-Material" target="#roslinka-Material">
+                <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="roslinka-tex-bind"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
