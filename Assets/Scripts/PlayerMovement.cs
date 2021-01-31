@@ -8,8 +8,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public Transform cam;
     public Animator anim;
+
     public AudioSource footSteps;
     public AudioSource punchSound;
+    public AudioSource jumpSound;
+
     public GameEvent onCustomerCollision;
     public ParticleSystem runDust;
     public ParticleSystem collisionParticles;
@@ -51,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             anim.SetBool("Jump", true);
+            jumpSound.Play();
             footSteps.Stop();
             runDust.Stop();
         }

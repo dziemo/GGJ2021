@@ -33,12 +33,14 @@ public class GameController : MonoBehaviour
             if (currentTime <= 0)
             {
                 OnGameEnd();
-                timeText.text = 0.00f.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+                timeText.text = 0f.ToString("0");
+                timeText.text = "0:00";
             }
             else
             {
                 currentTime -= Time.deltaTime;
-                timeText.text = currentTime.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+                timeText.text = currentTime.ToString("0");
+                timeText.text = $"{((currentTime / 60) - 1).ToString("0")}:{(currentTime % 60).ToString("0")}";
             }
         }
     }
@@ -52,7 +54,7 @@ public class GameController : MonoBehaviour
     public void OnCustomerCollision()
     {
         currentTime -= collisionPenalty;
-        timeText.text = currentTime.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+        timeText.text = $"{((currentTime / 60) - 1).ToString("0")}:{(currentTime % 60).ToString("0")}";
     }
 
     private void OnGameEnd ()
@@ -72,7 +74,7 @@ public class GameController : MonoBehaviour
     {
         currentTime = totalTimeSecs;
         timeText.enabled = true;
-        timeText.text = currentTime.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+        timeText.text = $"{((currentTime / 60) - 1).ToString("0")}:{(currentTime % 60).ToString("0")}";
         isGameStarted = true;
     }
 }
