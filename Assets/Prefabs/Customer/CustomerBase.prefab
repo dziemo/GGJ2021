@@ -234,6 +234,7 @@ MonoBehaviour:
   maxDistance: 35
   pushForce: 2
   runTreshold: 4
+  collisionGrunt: {fileID: 862046747213825502}
   modelsParent: {fileID: 1755421643489696837}
 --- !u!82 &862046747213825502
 AudioSource:

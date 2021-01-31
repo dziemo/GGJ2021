@@ -4031,7 +4031,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257316463}
-  m_LocalRotation: {x: 0.10895989, y: 0.42650524, z: -0.051842872, w: 0.8964003}
+  m_LocalRotation: {x: 0.108959906, y: 0.4265052, z: -0.051842872, w: 0.8964003}
   m_LocalPosition: {x: -5.4315543, y: 4, z: -4.415679}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13165,7 +13165,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956732934}
-  m_LocalRotation: {x: 0.10895989, y: 0.4265052, z: -0.051842876, w: 0.8964003}
+  m_LocalRotation: {x: 0.108959906, y: 0.42650518, z: -0.05184286, w: 0.8964003}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -15556,7 +15556,7 @@ MonoBehaviour:
   scoreText: {fileID: 878781870}
   gameStart: {fileID: 11400000, guid: af02ca725f342be47830fcf43e925933, type: 2}
   gameEnd: {fileID: 11400000, guid: ab5a7400d6e832146a21a698e0b960ac, type: 2}
-  totalTimeSecs: 60
+  totalTimeSecs: 300
   score: 0
   collisionPenalty: 1
 --- !u!114 &1213005773

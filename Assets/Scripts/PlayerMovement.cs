@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource footSteps;
     public AudioSource punchSound;
     public GameEvent onCustomerCollision;
+    public ParticleSystem runDust;
+    public ParticleSystem collisionParticles;
 
     public float speed = 5f;
     public float turnSmoothTime = 0.1f;
@@ -79,12 +81,14 @@ public class PlayerMovement : MonoBehaviour
             if (!footSteps.isPlaying)
             {
                 footSteps.Play();
+                runDust.Play();
             }
         }
         else
         {
             anim.SetBool("Run", false);
             footSteps.Stop();
+            runDust.Stop();
         }
 
         velocity.y += gravity * Time.deltaTime;
@@ -96,9 +100,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (coll.CompareTag("Customer"))
         {
-            coll.GetComponent<CustomerController>().OnPlayerCollision(transform.position);
-            onCustomerCollision.Raise();
-            punchSound.Play();
+            Instantiate(collisionParticles, coll.transform.position, coll.transform.rotation);
+            if (coll.GetComponent<CustomerController>().OnPlayerCollision(transform.position))
+            {
+                onCustomerCollision.Raise();
+                punchSound.Play();
+            }
         }
     }
 }

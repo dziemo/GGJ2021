@@ -51,7 +51,6 @@ public class GameController : MonoBehaviour
 
     public void OnCustomerCollision()
     {
-        Debug.Log("TIME PENALTY : " + collisionPenalty);
         currentTime -= collisionPenalty;
         timeText.text = currentTime.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
     }

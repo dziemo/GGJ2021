@@ -73,7 +73,7 @@ public class CustomerController : MonoBehaviour
         SetMoveAnim();
     }
 
-    public void OnPlayerCollision (Vector3 playerPos)
+    public bool OnPlayerCollision (Vector3 playerPos)
     {
         if (!isDisabled)
         {
@@ -106,6 +106,12 @@ public class CustomerController : MonoBehaviour
             {
                 transform.DOMove(transform.position + (pushDir * pushForce), 1f);
             }
+
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
