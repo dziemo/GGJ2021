@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class GameController : MonoBehaviour
     
     public GameEvent gameStart;
     public GameEvent gameEnd;
+
+    public GameObject endPanel;
+    public TextMeshProUGUI endScore;
 
     public int totalTimeSecs = 60;
     public int score = 0;
@@ -40,7 +44,7 @@ public class GameController : MonoBehaviour
             {
                 currentTime -= Time.deltaTime;
                 timeText.text = currentTime.ToString("0");
-                timeText.text = $"{((currentTime / 60) - 1).ToString("0")}:{(currentTime % 60).ToString("0")}";
+                timeText.text = $"{Mathf.FloorToInt(currentTime / 60f).ToString("0")}:{(currentTime % 60).ToString("00")}";
             }
         }
     }
@@ -54,15 +58,29 @@ public class GameController : MonoBehaviour
     public void OnCustomerCollision()
     {
         currentTime -= collisionPenalty;
-        timeText.text = $"{((currentTime / 60) - 1).ToString("0")}:{(currentTime % 60).ToString("0")}";
+        timeText.text = $"{Mathf.FloorToInt(currentTime / 60f).ToString("0")}:{(currentTime % 60).ToString("00")}";
     }
 
     private void OnGameEnd ()
     {
         gameEnd.Raise();
+        endPanel.SetActive(true);
+        endScore.text = score.ToString();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         isGameStarted = false;
     }
     
+    public void OnGameRestart ()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void OnGameExit ()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     IEnumerator GameStartDelay ()
     {
         yield return new WaitForSeconds(3f);
@@ -74,7 +92,7 @@ public class GameController : MonoBehaviour
     {
         currentTime = totalTimeSecs;
         timeText.enabled = true;
-        timeText.text = $"{((currentTime / 60) - 1).ToString("0")}:{(currentTime % 60).ToString("0")}";
+        timeText.text = $"{Mathf.FloorToInt(currentTime / 60f).ToString("0")}:{(currentTime % 60).ToString("00")}";
         isGameStarted = true;
     }
 }
