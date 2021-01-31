@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
     public GameEvent gameStart;
     public GameEvent gameEnd;
 
+    public AudioSource alarm;
+    public AudioSource fanfares;
+
     public GameObject endPanel;
     public TextMeshProUGUI endScore;
 
@@ -39,6 +42,11 @@ public class GameController : MonoBehaviour
                 OnGameEnd();
                 timeText.text = 0f.ToString("0");
                 timeText.text = "0:00";
+
+                if (currentTime < 2.5f)
+                {
+                    alarm.Play();
+                }
             }
             else
             {
@@ -69,16 +77,20 @@ public class GameController : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         isGameStarted = false;
+        Time.timeScale = 0;
+        fanfares.Play();
     }
     
     public void OnGameRestart ()
     {
         SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1;
     }
 
     public void OnGameExit ()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
     }
 
     IEnumerator GameStartDelay ()
@@ -86,6 +98,12 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         gameStart.Raise();
         StartCountdown();
+    }
+
+    IEnumerator FanareDelay ()
+    {
+        yield return new WaitForSeconds(0.1f);
+        fanfares.Play();
     }
 
     private void StartCountdown ()
