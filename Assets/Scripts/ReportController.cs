@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class ReportController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class ReportController : MonoBehaviour
     public GameEvent onNewReport;
     public TextMeshProUGUI possibleLocationsText;
     public TextMeshProUGUI reportText;
+
+    public Image lostIcon;
 
     public AudioSource reportSound;
 
@@ -58,16 +61,20 @@ public class ReportController : MonoBehaviour
         var fakeArea = gameAreas[Random.Range(0, gameAreas.Count)];
         var rnd = Random.Range(0f, 2f);
 
+        var objectController = newObject.GetComponent<LostObjectController>();
+        
         if (rnd < 1f)
         {
-            reportText.text = $"{newName} LOST {newObject.GetComponent<LostObjectController>().objectName}.\nIT MIGHT BE IN {fakeArea.areaName} OR {newArea.areaName}.\nGO FIND IT!";
+            reportText.text = $"{newName} LOST\n{objectController.objectName}. IT MIGHT BE IN {fakeArea.areaName} OR {newArea.areaName}.\nGO FIND IT!";
             possibleLocationsText.text = $"{fakeArea.areaName}\n{newArea.areaName}";
         }
         else
         {
-            reportText.text = $"{newName} LOST {newObject.GetComponent<LostObjectController>().objectName}.\nIT MIGHT BE IN {newArea.areaName} OR {fakeArea.areaName}.\nGO FIND IT!";
+            reportText.text = $"{newName} LOST\n{objectController.objectName}. IT MIGHT BE IN {newArea.areaName} OR {fakeArea.areaName}.\nGO FIND IT!";
             possibleLocationsText.text = $"{newArea.areaName}\n{fakeArea.areaName}";
         }
+
+        lostIcon.sprite = objectController.objectIcon;
 
         Instantiate(newObject, spawnPoint.position, Quaternion.identity);
 
@@ -90,9 +97,9 @@ public class ReportController : MonoBehaviour
     IEnumerator ReportAnim ()
     {
         radio.transform.DOLocalMove(new Vector3(0, 1.5f), 0.5f);
-        reportText.transform.parent.GetComponent<RectTransform>().DOAnchorPos3DY(50, 0.5f);
+        reportText.transform.parent.GetComponent<RectTransform>().DOAnchorPos3DY(210, 0.5f);
         yield return new WaitForSeconds(5f);
         radio.transform.DOLocalMove(Vector3.zero, 0.5f);
-        reportText.transform.parent.GetComponent<RectTransform>().DOAnchorPos3DY(-250, 0.5f);
+        reportText.transform.parent.GetComponent<RectTransform>().DOAnchorPos3DY(-330, 0.5f);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class LostObjectController : MonoBehaviour
 {
     public string objectName;
+    public Sprite objectIcon;
 
     Outline outline;
 

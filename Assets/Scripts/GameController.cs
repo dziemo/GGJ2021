@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
 {
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI scoreText;
-
+    
     public GameEvent gameStart;
     public GameEvent gameEnd;
 
