@@ -66,8 +66,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Alpha_tex: 0.14
-    - Smoothless_tex: 0.91
+    - Alpha_tex: 0.05
+    - Smoothless_tex: 0.43
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
