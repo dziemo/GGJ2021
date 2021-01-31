@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
 
     public AudioSource alarm;
     public AudioSource fanfares;
+    public AudioSource musicBackground;
 
     public GameObject endPanel;
     public TextMeshProUGUI endScore;

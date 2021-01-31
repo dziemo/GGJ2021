@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainColl: {fileID: -8569803383738579433}
   speedLimits: {x: 2, y: 7}
-  maxDistance: 35
+  maxDistance: 15
   pushForce: 2
   runTreshold: 4
   collisionGrunt: {fileID: 862046747213825502}
