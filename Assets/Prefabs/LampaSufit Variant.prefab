@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5108938583468067006, guid: 8734b85d4ed3dea4ba8e939123a5bbca,
         type: 3}
       propertyPath: m_Name
-      value: LampaSufit
+      value: LampaSufit Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5597209344565744132, guid: 8734b85d4ed3dea4ba8e939123a5bbca,
         type: 3}
