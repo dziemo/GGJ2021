@@ -65,12 +65,12 @@ public class ReportController : MonoBehaviour
         
         if (rnd < 1f)
         {
-            reportText.text = $"{newName} LOST\n{objectController.objectName}. IT MIGHT BE IN {fakeArea.areaName} OR {newArea.areaName}.\nGO FIND IT!";
+            reportText.text = $"{newName} lost\n{objectController.objectName}. It might be in {fakeArea.areaName} or {newArea.areaName}.\nGo find it!";
             possibleLocationsText.text = $"{fakeArea.areaName}\n{newArea.areaName}";
         }
         else
         {
-            reportText.text = $"{newName} LOST\n{objectController.objectName}. IT MIGHT BE IN {newArea.areaName} OR {fakeArea.areaName}.\nGO FIND IT!";
+            reportText.text = $"{newName} lost\n{objectController.objectName}. It might be in {newArea.areaName} or {fakeArea.areaName}.\nGo find it!";
             possibleLocationsText.text = $"{newArea.areaName}\n{fakeArea.areaName}";
         }
 
