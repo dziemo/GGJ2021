@@ -50,11 +50,10 @@ public class ReportController : MonoBehaviour
         var newArea = gameAreas[Random.Range(0, gameAreas.Count)];
 
         var spawnPoint = newArea.PickRandomSpawn();
-
-
-        gameNames.Remove(currentName);
-        gameLostObjects.Remove(currentObject);
-        gameAreas.Remove(currentArea);
+        
+        gameNames.Remove(newName);
+        gameLostObjects.Remove(newObject);
+        gameAreas.Remove(newArea);
 
         var fakeArea = gameAreas[Random.Range(0, gameAreas.Count)];
         var rnd = Random.Range(0f, 2f);

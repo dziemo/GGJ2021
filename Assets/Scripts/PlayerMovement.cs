@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             anim.SetBool("Jump", true);
+            footSteps.Stop();
+            runDust.Stop();
         }
     }
 
@@ -64,6 +66,8 @@ public class PlayerMovement : MonoBehaviour
         else if (!anim.GetBool("Jump") && velocity.y < fallTreshold)
         {
             anim.SetBool("Jump", true);
+            footSteps.Stop();
+            runDust.Stop();
         }
 
         Vector3 processedDir = Vector3.zero;
@@ -78,7 +82,8 @@ public class PlayerMovement : MonoBehaviour
             processedDir *= speed;
 
             anim.SetBool("Run", true);
-            if (!footSteps.isPlaying)
+
+            if (!footSteps.isPlaying && controller.isGrounded)
             {
                 footSteps.Play();
                 runDust.Play();
@@ -92,7 +97,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         velocity.y += gravity * Time.deltaTime;
-        
+
+        if (anim.GetBool("Jump"))
+        {
+            footSteps.Stop();
+            runDust.Stop();
+        }
+
         controller.Move((velocity + processedDir) * Time.deltaTime);    
     }
 
@@ -105,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 onCustomerCollision.Raise();
                 punchSound.Play();
-            }
+            }       
         }
     }
 }
