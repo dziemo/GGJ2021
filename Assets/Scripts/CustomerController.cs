@@ -58,6 +58,8 @@ public class CustomerController : MonoBehaviour
         NavMesh.SamplePosition(randomPos, out hit, maxDistance, NavMesh.AllAreas);
 
         agent.SetDestination(hit.position);
+
+        StartCoroutine(ImpatienceDelay());
     }
 
     IEnumerator OnPointReached ()
@@ -113,6 +115,12 @@ public class CustomerController : MonoBehaviour
         {
             return false;
         }
+    }
+
+    IEnumerator ImpatienceDelay ()
+    {
+        yield return new WaitForSeconds(Random.Range(5f, 8f));
+        OnPointReached();
     }
 
     IEnumerator CollisionWalkDelay ()

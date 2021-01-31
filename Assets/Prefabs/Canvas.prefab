@@ -554,7 +554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20.000122, y: -129.99994}
+  m_AnchoredPosition: {x: 20, y: -125}
   m_SizeDelta: {x: 330, y: 73}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &6606772463138275304
@@ -1072,7 +1072,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -19.999878, y: -20.000122}
+  m_AnchoredPosition: {x: -20, y: -20}
   m_SizeDelta: {x: 186, y: 75}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &6606772463908015289
@@ -1147,7 +1147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20.000122, y: -20.000122}
+  m_AnchoredPosition: {x: 20, y: -20}
   m_SizeDelta: {x: 200, y: 75}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &6606772463936213561
@@ -1251,9 +1251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Electronics
-
-    Restaurant'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36053cfdb79cfc2429a72fe320f33150, type: 2}
   m_sharedMaterial: {fileID: 7686381144341771595, guid: 36053cfdb79cfc2429a72fe320f33150,
@@ -1357,7 +1355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 23, y: 13}
+  m_AnchoredPosition: {x: 38, y: 15}
   m_SizeDelta: {x: -92.66193, y: -112.521805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6606772464204865819
